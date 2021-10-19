@@ -7,7 +7,7 @@ function TextField(labelName, text, submitFunction) {
       setText(text => e.target.value);
       console.log(text);
     }}></input>
-    <button>Edit</button>
+    <button>Submit</button>
   </form>
 }
 

@@ -21,8 +21,12 @@ function App() {
 
   function editText(e) {
     e.preventDefault();
-
+    const inputField = document.getElementsByClassName("inputFirstName")[0];
+    inputField.classList.add("hide");
+    const firstName = document.getElementsByClassName("firstName")[0];
+    firstName.classList.add("show");
   }
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -33,7 +37,9 @@ function App() {
         <button>Submit</button>
       </form>
       <Overview list={taskArray} />
-      <TextField labelName={"First name"} text={text} submitFunction={editText} />
+      <p className="firstName hide"></p>
+      <TextField className={inputFirstName} labelName={"First name"} text={text} submitFunction={editText} />
+      <button classname="editFirstName">Edit</button>
     </div>
   );
 }
