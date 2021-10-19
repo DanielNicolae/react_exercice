@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './App.css';
-import "./src/styles/TextField.css";
+import "./styles/TextField.css";
 import Overview from './components/Overview';
-import TextField from "./components/TextField";
+// import TextField from "./components/TextField";
 
 function App() {
   const [taskArray, setTaskArray] = useState([]);
@@ -22,9 +22,14 @@ function App() {
   function submitFirstName(e) {
     e.preventDefault();
     const inputField = document.getElementsByClassName("inputFirstName")[0];
-    inputField.classList.add("hide");
+    if (inputField) {
+      inputField.classList.add("hide");
+    }
     const firstName = document.getElementsByClassName("firstName")[0];
-    firstName.classList.add("show");
+    if (firstName) {
+      firstName.classList.add("show");
+      firstName.textContent = text;
+    }
   }
 
   function editFirstName() {
@@ -32,8 +37,11 @@ function App() {
     firstName.classList.remove("show");
     firstName.classList.add("hide");
     const inputField = document.getElementsByClassName("inputFirstName")[0];
-    inputField.classList.remove("hide");
-    inputField.classList.add("show");
+    if (inputField) {
+      inputField.classList.remove("hide");
+      inputField.classList.add("show");
+    }
+
   }
 
   return (
@@ -46,8 +54,14 @@ function App() {
         <button>Submit</button>
       </form>
       <Overview list={taskArray} />
-      <p className="firstName hide"></p>
-      <TextField className={inputFirstName} labelName={"First name"} text={text} submitFunction={submitFirstName} />
+      <p className="firstName "></p>
+      <form className="inputFirstName" onSubmit={submitFirstName}>
+        <label for="First name">First name</label>
+        <input type="text" name="First name" onChange={(e) => {
+          setText(text => e.target.value);
+        }}></input>
+        <button>Submit</button>
+      </form>
       <button classname="editFirstName" onClick={editFirstName}>Edit</button>
     </div>
   );
