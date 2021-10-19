@@ -19,12 +19,21 @@ function App() {
     e.preventDefault();
   }
 
-  function editText(e) {
+  function submitFirstName(e) {
     e.preventDefault();
     const inputField = document.getElementsByClassName("inputFirstName")[0];
     inputField.classList.add("hide");
     const firstName = document.getElementsByClassName("firstName")[0];
     firstName.classList.add("show");
+  }
+
+  function editFirstName() {
+    const firstName = document.getElementsByClassName("firstName")[0];
+    firstName.classList.remove("show");
+    firstName.classList.add("hide");
+    const inputField = document.getElementsByClassName("inputFirstName")[0];
+    inputField.classList.remove("hide");
+    inputField.classList.add("show");
   }
 
   return (
@@ -38,8 +47,8 @@ function App() {
       </form>
       <Overview list={taskArray} />
       <p className="firstName hide"></p>
-      <TextField className={inputFirstName} labelName={"First name"} text={text} submitFunction={editText} />
-      <button classname="editFirstName">Edit</button>
+      <TextField className={inputFirstName} labelName={"First name"} text={text} submitFunction={submitFirstName} />
+      <button classname="editFirstName" onClick={editFirstName}>Edit</button>
     </div>
   );
 }
