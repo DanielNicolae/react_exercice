@@ -55,6 +55,18 @@ function App() {
       age.textContent = text;
     }
   }
+  function submitExperience(e) {
+    e.preventDefault();
+    const inputField = document.getElementsByClassName("inputExperience")[0];
+    if (inputField) {
+      inputField.classList.add("hide");
+    }
+    const experience = document.getElementsByClassName("experience")[0];
+    if (experience) {
+      experience.classList.add("show");
+      experience.textContent = text;
+    }
+  }
 
   function editFirstName() {
     const firstName = document.getElementsByClassName("firstName")[0];
@@ -81,6 +93,16 @@ function App() {
     age.classList.remove("show");
     age.classList.add("hide");
     const inputField = document.getElementsByClassName("inputAge")[0];
+    if (inputField) {
+      inputField.classList.remove("hide");
+      inputField.classList.add("show");
+    }
+  }
+  function editExperience() {
+    const experience = document.getElementsByClassName("experience")[0];
+    experience.classList.remove("show");
+    experience.classList.add("hide");
+    const inputField = document.getElementsByClassName("inputExperience")[0];
     if (inputField) {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
@@ -129,6 +151,17 @@ function App() {
           <button>Submit</button>
         </form>
         <button classname="editAge" onClick={editAge}>Edit</button>
+      </div>
+      <div className="experienceContainer">
+        <p className="experience"></p>
+        <form className="inputExperience" onSubmit={submitExperience}>
+          <label for="Experience">Experience</label>
+          <inputField type="text" name="Experience" onChange={(e) => {
+            setText(text => e.target.value);
+          }}></inputField>
+          <button>Submit</button>
+        </form>
+        <button classname="editExperience" onClick={editExperience}>Edit</button>
       </div>
     </div>
   );
