@@ -31,6 +31,18 @@ function App() {
       firstName.textContent = text;
     }
   }
+  function submitLastName(e) {
+    e.preventDefault();
+    const inputField = document.getElementsByClassName("inputLastName")[0];
+    if (inputField) {
+      inputField.classList.add("hide");
+    }
+    const lastName = document.getElementsByClassName("lastName")[0];
+    if (lastName) {
+      lastName.classList.add("show");
+      lastName.textContent = text;
+    }
+  }
 
   function editFirstName() {
     const firstName = document.getElementsByClassName("firstName")[0];
@@ -41,7 +53,16 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
-
+  }
+  function editLastName() {
+    const lastName = document.getElementsByClassName("lastName")[0];
+    lastName.classList.remove("show");
+    lastName.classList.add("hide");
+    const inputField = document.getElementsByClassName("inputLastName")[0];
+    if (inputField) {
+      inputField.classList.remove("hide");
+      inputField.classList.add("show");
+    }
   }
 
   return (
@@ -54,15 +75,28 @@ function App() {
         <button>Submit</button>
       </form>
       <Overview list={taskArray} />
-      <p className="firstName "></p>
-      <form className="inputFirstName" onSubmit={submitFirstName}>
-        <label for="First name">First name</label>
-        <input type="text" name="First name" onChange={(e) => {
-          setText(text => e.target.value);
-        }}></input>
-        <button>Submit</button>
-      </form>
-      <button classname="editFirstName" onClick={editFirstName}>Edit</button>
+      <div>
+        <p className="firstName"></p>
+        <form className="inputFirstName" onSubmit={submitFirstName}>
+          <label for="First name">First name</label>
+          <input type="text" name="First name" onChange={(e) => {
+            setText(text => e.target.value);
+          }}></input>
+          <button>Submit</button>
+        </form>
+        <button classname="editFirstName" onClick={editFirstName}>Edit</button>
+      </div>
+      <div>
+        <p className="lastName"></p>
+        <form className="inputLastName" onSubmit={submitLastName}>
+          <label for="Last name">Last name</label>
+          <input type="text" name="Last name" onChange={(e) => {
+            setText(text => e.target.value);
+          }}></input>
+          <button>Submit</button>
+        </form>
+        <button classname="editLastName" onClick={editLastName}>Edit</button>
+      </div>
     </div>
   );
 }
