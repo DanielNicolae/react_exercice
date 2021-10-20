@@ -67,6 +67,18 @@ function App() {
       experience.textContent = text;
     }
   }
+  function submitEducation(e) {
+    e.preventDefault();
+    const inputField = document.getElementsByClassName("inputEducation")[0];
+    if (inputField) {
+      inputField.classList.add("hide");
+    }
+    const education = document.getElementsByClassName("education")[0];
+    if (education) {
+      education.classList.add("show");
+      education.textContent = text;
+    }
+  }
 
   function editFirstName() {
     const firstName = document.getElementsByClassName("firstName")[0];
@@ -103,6 +115,16 @@ function App() {
     experience.classList.remove("show");
     experience.classList.add("hide");
     const inputField = document.getElementsByClassName("inputExperience")[0];
+    if (inputField) {
+      inputField.classList.remove("hide");
+      inputField.classList.add("show");
+    }
+  }
+  function editEducation() {
+    const education = document.getElementsByClassName("education")[0];
+    education.classList.remove("show");
+    education.classList.add("hide");
+    const inputField = document.getElementsByClassName("inputEducation")[0];
     if (inputField) {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
@@ -162,6 +184,17 @@ function App() {
           <button>Submit</button>
         </form>
         <button classname="editExperience" onClick={editExperience}>Edit</button>
+      </div>
+      <div className="educationContainer">
+        <p className="education"></p>
+        <form className="inputEducation" onSubmit={submitEducation}>
+          <label for="Education">Education</label>
+          <inputField type="text" name="Education" onChange={(e) => {
+            setText(text => e.target.value);
+          }}></inputField>
+          <button>Submit</button>
+        </form>
+        <button classname="editEducation" onClick={editEducation}>Edit</button>
       </div>
     </div>
   );
