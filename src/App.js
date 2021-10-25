@@ -8,16 +8,16 @@ function App() {
   const [taskArray, setTaskArray] = useState([]);
   const [text, setText] = useState("");
 
-  function handleSubmit(e) {
-    setTaskArray(
-      [
-        ...taskArray,
-        text
-      ]
-    )
-    console.log(taskArray);
-    e.preventDefault();
-  }
+  // function handleSubmit(e) {
+  //   setTaskArray(
+  //     [
+  //       ...taskArray,
+  //       text
+  //     ]
+  //   )
+  //   console.log(taskArray);
+  //   e.preventDefault();
+  // }
 
   function submitFirstName(e) {
     e.preventDefault();
@@ -28,8 +28,11 @@ function App() {
     const firstName = document.getElementsByClassName("firstName")[0];
     if (firstName) {
       firstName.classList.add("show");
+      firstName.classList.remove("hide");
       firstName.textContent = text;
     }
+    const editButton = document.getElementsByClassName("editFirstName")[0];
+    editButton.classList.remove("hide");
   }
   function submitLastName(e) {
     e.preventDefault();
@@ -40,8 +43,11 @@ function App() {
     const lastName = document.getElementsByClassName("lastName")[0];
     if (lastName) {
       lastName.classList.add("show");
+      lastName.classList.remove("hide");
       lastName.textContent = text;
     }
+    const editButton = document.getElementsByClassName("editLastName")[0];
+    editButton.classList.remove("hide");
   }
   function submitAge(e) {
     e.preventDefault();
@@ -52,8 +58,11 @@ function App() {
     const age = document.getElementsByClassName("age")[0];
     if (age) {
       age.classList.add("show");
+      age.classList.remove("hde");
       age.textContent = text;
     }
+    const editButton = document.getElementsByClassName("editAge")[0];
+    editButton.classList.remove("hide");
   }
   function submitExperience(e) {
     e.preventDefault();
@@ -64,8 +73,11 @@ function App() {
     const experience = document.getElementsByClassName("experience")[0];
     if (experience) {
       experience.classList.add("show");
+      experience.classList.remove("hide");
       experience.textContent = text;
     }
+    const editButton = document.getElementsByClassName("editExperience")[0];
+    editButton.classList.remove("hide");
   }
   function submitEducation(e) {
     e.preventDefault();
@@ -76,8 +88,11 @@ function App() {
     const education = document.getElementsByClassName("education")[0];
     if (education) {
       education.classList.add("show");
+      education.classList.remove("hide");
       education.textContent = text;
     }
+    const editButton = document.getElementsByClassName("editEducation")[0];
+    editButton.classList.remove("hide");
   }
 
   function editFirstName() {
@@ -89,6 +104,8 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
+    const editButton = document.getElementsByClassName("editFirstName")[0];
+    editButton.classList.add("hide");
   }
   function editLastName() {
     const lastName = document.getElementsByClassName("lastName")[0];
@@ -99,6 +116,8 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
+    const editButton = document.getElementsByClassName("editLastName")[0];
+    editButton.classList.add("hide");
   }
   function editAge() {
     const age = document.getElementsByClassName("age")[0];
@@ -109,6 +128,8 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
+    const editButton = document.getElementsByClassName("editAge")[0];
+    editButton.classList.add("hide");
   }
   function editExperience() {
     const experience = document.getElementsByClassName("experience")[0];
@@ -119,6 +140,8 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
+    const editButton = document.getElementsByClassName("editExperience")[0];
+    editButton.classList.add("hide");
   }
   function editEducation() {
     const education = document.getElementsByClassName("education")[0];
@@ -129,6 +152,8 @@ function App() {
       inputField.classList.remove("hide");
       inputField.classList.add("show");
     }
+    const editButton = document.getElementsByClassName("editEducation")[0];
+    editButton.classList.add("hide");
   }
 
   return (
@@ -150,7 +175,7 @@ function App() {
           }}></input>
           <button>Submit</button>
         </form>
-        <button classname="editFirstName hide" onClick={editFirstName}>Edit</button>
+        <button className="editFirstName hide" onClick={editFirstName}>Edit</button>
       </div>
       <div className="lastNameContainer">
         <p className="lastName"></p>
@@ -161,7 +186,7 @@ function App() {
           }}></input>
           <button>Submit</button>
         </form>
-        <button classname="editLastName" onClick={editLastName}>Edit</button>
+        <button className="editLastName hide" onClick={editLastName}>Edit</button>
       </div>
       <div className="ageContainer">
         <p className="age"></p>
@@ -172,7 +197,7 @@ function App() {
           }}></input>
           <button>Submit</button>
         </form>
-        <button classname="editAge" onClick={editAge}>Edit</button>
+        <button className="editAge hide" onClick={editAge}>Edit</button>
       </div>
       <div className="experienceContainer">
         <p className="experience"></p>
@@ -183,7 +208,7 @@ function App() {
           }}></textarea>
           <button>Submit</button>
         </form>
-        <button classname="editExperience" onClick={editExperience}>Edit</button>
+        <button className="editExperience hide" onClick={editExperience}>Edit</button>
       </div>
       <div className="educationContainer">
         <p className="education"></p>
@@ -194,7 +219,7 @@ function App() {
           }}></textarea>
           <button>Submit</button>
         </form>
-        <button classname="editEducation" onClick={editEducation}>Edit</button>
+        <button className="editEducation hide" onClick={editEducation}>Edit</button>
       </div>
     </div>
   );
