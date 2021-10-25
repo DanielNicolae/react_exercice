@@ -167,60 +167,59 @@ function App() {
       </form> */}
       {/* <Overview list={taskArray} /> */}
       <div className="firstNameContainer">
-
-        <p className="firstName"></p>
-        <form className="inputFirstName" onSubmit={submitFirstName}>
+        <p className="firstName marginTopBottom form"></p>
+        <form className="inputFirstName marginTopBottom form" onSubmit={submitFirstName}>
           <label for="First name">First name</label>
-          <input type="text" name="First name" onChange={(e) => {
+          <input className="inputField" type="text" name="First name" onChange={(e) => {
             setText(text => "First name: " + e.target.value);
           }}></input>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
-        <button className="editFirstName hide" onClick={editFirstName}>Edit</button>
+        <button className="editFirstName hide button" onClick={editFirstName}>Edit</button>
       </div>
       <div className="lastNameContainer">
-        <p className="lastName"></p>
-        <form className="inputLastName" onSubmit={submitLastName}>
+        <p className="lastName marginTopBottom"></p>
+        <form className="inputLastName marginTopBottom form" onSubmit={submitLastName}>
           <label for="Last name">Last name</label>
-          <input type="text" name="Last name" onChange={(e) => {
+          <input className="inputField" type="text" name="Last name" onChange={(e) => {
             setText(text => "Last name: " + e.target.value);
           }}></input>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
-        <button className="editLastName hide" onClick={editLastName}>Edit</button>
+        <button className="editLastName hide button" onClick={editLastName}>Edit</button>
       </div>
       <div className="ageContainer">
-        <p className="age"></p>
-        <form className="inputAge" onSubmit={submitAge}>
+        <p className="age marginTopBottom"></p>
+        <form className="inputAge marginTopBottom form" onSubmit={submitAge}>
           <label for="Age">Age</label>
-          <input type="text" name="Age" onChange={(e) => {
+          <input className="inputField" type="text" name="Age" onChange={(e) => {
             setText(text => "Age: " + e.target.value);
           }}></input>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
-        <button className="editAge hide" onClick={editAge}>Edit</button>
+        <button className="editAge hide button" onClick={editAge}>Edit</button>
       </div>
       <div className="experienceContainer">
-        <p className="experience"></p>
-        <form className="inputExperience" onSubmit={submitExperience}>
+        <p className="experience marginTopBottom"></p>
+        <form className="inputExperience marginTopBottom form" onSubmit={submitExperience}>
           <label for="Experience">Experience</label>
-          <textarea type="text" name="Experience" onChange={(e) => {
+          <textarea className="inputField" type="text" name="Experience" onChange={(e) => {
             setText(text => "Experience: " + e.target.value);
           }}></textarea>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
-        <button className="editExperience hide" onClick={editExperience}>Edit</button>
+        <button className="editExperience hide button" onClick={editExperience}>Edit</button>
       </div>
       <div className="educationContainer">
-        <p className="education"></p>
-        <form className="inputEducation" onSubmit={submitEducation}>
+        <p className="education marginTopBottom"></p>
+        <form className="inputEducation marginTopBottom form" onSubmit={submitEducation}>
           <label for="Education">Education</label>
-          <textarea type="text" name="Education" onChange={(e) => {
+          <textarea className="inputField" type="text" name="Education" onChange={(e) => {
             setText(text => "Education: " + e.target.value);
           }}></textarea>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
-        <button className="editEducation hide" onClick={editEducation}>Edit</button>
+        <button className="editEducation hide button" onClick={editEducation}>Edit</button>
       </div>
     </div>
   );
