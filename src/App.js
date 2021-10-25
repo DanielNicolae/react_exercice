@@ -133,14 +133,14 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={(e) => {
           setText(text => e.target.value);
           console.log(text);
         }}></input>
         <button>Submit</button>
-      </form>
-      <Overview list={taskArray} />
+      </form> */}
+      {/* <Overview list={taskArray} /> */}
       <div className="firstNameContainer">
         <p className="firstName"></p>
         <form className="inputFirstName" onSubmit={submitFirstName}>
@@ -150,7 +150,7 @@ function App() {
           }}></input>
           <button>Submit</button>
         </form>
-        <button classname="editFirstName" onClick={editFirstName}>Edit</button>
+        <button classname="editFirstName hide" onClick={editFirstName}>Edit</button>
       </div>
       <div className="lastNameContainer">
         <p className="lastName"></p>
@@ -178,9 +178,9 @@ function App() {
         <p className="experience"></p>
         <form className="inputExperience" onSubmit={submitExperience}>
           <label for="Experience">Experience</label>
-          <inputField type="text" name="Experience" onChange={(e) => {
+          <textarea type="text" name="Experience" onChange={(e) => {
             setText(text => e.target.value);
-          }}></inputField>
+          }}></textarea>
           <button>Submit</button>
         </form>
         <button classname="editExperience" onClick={editExperience}>Edit</button>
@@ -189,9 +189,9 @@ function App() {
         <p className="education"></p>
         <form className="inputEducation" onSubmit={submitEducation}>
           <label for="Education">Education</label>
-          <inputField type="text" name="Education" onChange={(e) => {
+          <textarea type="text" name="Education" onChange={(e) => {
             setText(text => e.target.value);
-          }}></inputField>
+          }}></textarea>
           <button>Submit</button>
         </form>
         <button classname="editEducation" onClick={editEducation}>Edit</button>
