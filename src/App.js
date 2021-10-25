@@ -24,6 +24,7 @@ function App() {
     const inputField = document.getElementsByClassName("inputFirstName")[0];
     if (inputField) {
       inputField.classList.add("hide");
+      inputField.classList.remove("show");
     }
     const firstName = document.getElementsByClassName("firstName")[0];
     if (firstName) {
@@ -39,6 +40,7 @@ function App() {
     const inputField = document.getElementsByClassName("inputLastName")[0];
     if (inputField) {
       inputField.classList.add("hide");
+      inputField.classList.remove("show");
     }
     const lastName = document.getElementsByClassName("lastName")[0];
     if (lastName) {
@@ -54,6 +56,7 @@ function App() {
     const inputField = document.getElementsByClassName("inputAge")[0];
     if (inputField) {
       inputField.classList.add("hide");
+      inputField.classList.remove("show");
     }
     const age = document.getElementsByClassName("age")[0];
     if (age) {
@@ -69,6 +72,7 @@ function App() {
     const inputField = document.getElementsByClassName("inputExperience")[0];
     if (inputField) {
       inputField.classList.add("hide");
+      inputField.classList.remove("show");
     }
     const experience = document.getElementsByClassName("experience")[0];
     if (experience) {
@@ -84,6 +88,7 @@ function App() {
     const inputField = document.getElementsByClassName("inputEducation")[0];
     if (inputField) {
       inputField.classList.add("hide");
+      inputField.classList.remove("show");
     }
     const education = document.getElementsByClassName("education")[0];
     if (education) {

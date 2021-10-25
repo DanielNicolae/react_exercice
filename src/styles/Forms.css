@@ -5,31 +5,16 @@
   border: 0;
 }
 
-.show
+html
 {
-  display: block;
-}
-.hide
-{
-  display: none;
-}
-
-.inputField
-{
-  border: 1px solid black;
-  margin: 5px 0 5px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("../images/pexels-johannes-plenio-1103970.png");
+  background-size: 100vw 100vh;
 }
 
 .marginTopBottom
 {
   margin: 2em 0 2em 0;
-}
-
-.button
-{
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 3px;
 }
 
 .form
@@ -38,4 +23,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+  .inputField
+  {
+    border: 1px solid black;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+  }
+  .button
+  {
+    padding: 5px;
+    
+    border-radius: 3px;
+    background: rgba(81, 226, 245, 0.3);
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+  }
+  .button:hover
+  {
+    box-shadow: 1px 1px 1px rgb(0, 0, 0);
+    transform: translate(2px, 2px);
+  }
+
+
+.show
+{
+  display: flex;
+}
+.hide
+{
+  display: none;
 }
