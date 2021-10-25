@@ -167,11 +167,12 @@ function App() {
       </form> */}
       {/* <Overview list={taskArray} /> */}
       <div className="firstNameContainer">
+
         <p className="firstName"></p>
         <form className="inputFirstName" onSubmit={submitFirstName}>
           <label for="First name">First name</label>
           <input type="text" name="First name" onChange={(e) => {
-            setText(text => e.target.value);
+            setText(text => "First name: " + e.target.value);
           }}></input>
           <button>Submit</button>
         </form>
@@ -182,7 +183,7 @@ function App() {
         <form className="inputLastName" onSubmit={submitLastName}>
           <label for="Last name">Last name</label>
           <input type="text" name="Last name" onChange={(e) => {
-            setText(text => e.target.value);
+            setText(text => "Last name: " + e.target.value);
           }}></input>
           <button>Submit</button>
         </form>
@@ -193,7 +194,7 @@ function App() {
         <form className="inputAge" onSubmit={submitAge}>
           <label for="Age">Age</label>
           <input type="text" name="Age" onChange={(e) => {
-            setText(text => e.target.value);
+            setText(text => "Age: " + e.target.value);
           }}></input>
           <button>Submit</button>
         </form>
@@ -204,7 +205,7 @@ function App() {
         <form className="inputExperience" onSubmit={submitExperience}>
           <label for="Experience">Experience</label>
           <textarea type="text" name="Experience" onChange={(e) => {
-            setText(text => e.target.value);
+            setText(text => "Experience: " + e.target.value);
           }}></textarea>
           <button>Submit</button>
         </form>
@@ -215,7 +216,7 @@ function App() {
         <form className="inputEducation" onSubmit={submitEducation}>
           <label for="Education">Education</label>
           <textarea type="text" name="Education" onChange={(e) => {
-            setText(text => e.target.value);
+            setText(text => "Education: " + e.target.value);
           }}></textarea>
           <button>Submit</button>
         </form>
