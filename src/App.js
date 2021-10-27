@@ -166,7 +166,7 @@ function App() {
   const imageInputRef = useRef();
 
   useEffect(() => {
-    if (image) {
+    if (imageProfile) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setPreview(reader.result);
