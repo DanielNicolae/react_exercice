@@ -26,6 +26,8 @@ html
       background: rgb(151, 151, 151);
       margin: 10px;
       text-align: center;
+      width: 15em;
+      height: 15em;
     }
     .imageInput
     {
