@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './App.css';
 import "./styles/Forms.css";
 import Overview from './components/Overview';
@@ -161,6 +161,22 @@ function App() {
     editButton.classList.add("hide");
   }
 
+  const [imageProfile, setImageProfile] = useState();
+  const [preview, setPreview] = useState();
+  const imageInputRef = useRef();
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(imageProfile);
+    } else {
+      setPreview(null);
+    }
+  }, [imageProfile]);
+
   return (
     <div className="App">
       {/* <form onSubmit={handleSubmit}>
@@ -171,6 +187,30 @@ function App() {
         <button>Submit</button>
       </form> */}
       {/* <Overview list={taskArray} /> */}
+      <form>
+        {preview ? (
+          <img src={preview} />
+        ) : (
+          <button className="profileImage"
+            onClick={e => {
+              e.preventDefault();
+              imageInputRef.current.click();
+            }} >
+            Add Image
+          </button>
+        )}
+        <input className="imageInput" type="file" accept="image/*" ref={imageInputRef}
+          onChange={e => {
+            e.preventDefault();
+            const file = e.target.files[0];
+            if (file && file.type.substr(0, 5) === "image") {
+              setImageProfile(file);
+            } else {
+              setImageProfile(null);
+            }
+          }} />
+      </form>
+
       <div className="formsContainer">
         <div className="firstNameContainer">
           <p className="firstName marginTopBottom form"></p>
@@ -178,7 +218,7 @@ function App() {
             <label for="First name">First name</label>
             <input className="inputField" type="text" name="First name" onChange={(e) => {
               setText(text => "First name: " + e.target.value);
-            }}></input>
+            }} />
             <button className="button">Submit</button>
           </form>
           <button className="editFirstName hide button" onClick={editFirstName}>Edit</button>
@@ -189,7 +229,7 @@ function App() {
             <label for="Last name">Last name</label>
             <input className="inputField" type="text" name="Last name" onChange={(e) => {
               setText(text => "Last name: " + e.target.value);
-            }}></input>
+            }} />
             <button className="button">Submit</button>
           </form>
           <button className="editLastName hide button" onClick={editLastName}>Edit</button>
@@ -200,7 +240,7 @@ function App() {
             <label for="Age">Age</label>
             <input className="inputField" type="text" name="Age" onChange={(e) => {
               setText(text => "Age: " + e.target.value);
-            }}></input>
+            }} />
             <button className="button">Submit</button>
           </form>
           <button className="editAge hide button" onClick={editAge}>Edit</button>
