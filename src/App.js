@@ -189,7 +189,7 @@ function App() {
       {/* <Overview list={taskArray} /> */}
       <form>
         {preview ? (
-          <img src={preview} />
+          <img className="profileImage" src={preview} />
         ) : (
           <button className="profileImage"
             onClick={e => {
